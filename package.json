@@ -1,0 +1,42 @@
+{
+  "name": "nuxt-app",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare"
+  },
+  "devDependencies": {
+    "@nuxt/devtools": "latest",
+    "@nuxt/eslint-config": "^0.2.0",
+    "@nuxtjs/eslint-config-typescript": "^12.1.0",
+    "@nuxtjs/eslint-module": "^4.1.0",
+    "@nuxtjs/tailwindcss": "^6.8.0",
+    "eslint": "^8.51.0",
+    "nuxt": "^3.7.4",
+    "nuxt-icon": "^0.5.0",
+    "prettier": "^3.0.3",
+    "sass": "^1.69.3",
+    "vue": "^3.3.4",
+    "vue-router": "^4.2.5"
+  },
+  "dependencies": {
+    "@nuxt/ui": "^2.9.0",
+    "@pinia/nuxt": "^0.4.11",
+    "@tiptap/extension-bold": "^2.1.12",
+    "@tiptap/extension-code": "^2.1.12",
+    "@tiptap/extension-heading": "^2.1.12",
+    "@tiptap/extension-highlight": "^2.1.12",
+    "@tiptap/extension-italic": "^2.1.12",
+    "@tiptap/extension-paragraph": "^2.1.12",
+    "@tiptap/extension-strike": "^2.1.12",
+    "@tiptap/pm": "^2.1.12",
+    "@tiptap/starter-kit": "^2.1.12",
+    "@tiptap/vue-3": "^2.1.12",
+    "@vueup/vue-quill": "^1.2.0",
+    "pinia": "^2.1.6"
+  }
+}
