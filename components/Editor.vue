@@ -1,61 +1,62 @@
 <template>
   <section class="max-w-md">
     <div class="border rounded">
-      <div class="bg-black rounded-t p-2 flex">
-        <div class="flex gap-2">
-          <UButton
-            color="gray"
-            @click="editor.commands.toggleBold()">
-            <Icon name="material-symbols:format-bold" />
-          </UButton>
-          <UButton
-            color="gray"
-            @click="editor.commands.toggleItalic()">
-            <Icon name="material-symbols:format-italic" />
-          </UButton>
-          <UButton
-            color="gray"
-            @click="editor.commands.toggleStrike()">
-            <Icon name="material-symbols:strikethrough-s" />
-          </UButton>
-          <UButton
-            color="gray"
-            @click="editor.commands.toggleCode()">
-            <Icon name="material-symbols:code" />
-          </UButton>
-          <UButton
-            color="gray"
-            @click="editor.commands.toggleHighlight()">
-            <Icon name="material-symbols:format-ink-highlighter-outline" />
-          </UButton>
+      <div class="bg-gray-200 rounded-t p-2 flex">
+        <div class="flex gap-2 items-center">
+          <div
+            size="small"
+            @click="editor.commands.toggleBold()"
+          >
+            <Icon
+              name="ic:baseline-format-bold"
+              class="w-6 h-6"
+            />
+          </div>
+          <div @click="editor.commands.toggleItalic()">
+            <Icon
+              name="ic:baseline-format-italic"
+              class="w-6 h-6"
+            />
+          </div>
+          <div @click="editor.commands.toggleStrike()">
+            <Icon
+              name="ic:twotone-strikethrough-s"
+              class="w-6 h-6"
+            />
+          </div>
+          <div @click="editor.commands.toggleHighlight()">
+            <Icon
+              name="material-symbols:format-ink-highlighter-outline"
+              class="w-6 h-6"
+            />
+          </div>
         </div>
-        <div class="w-[1px] h-6 bg-gray-100 mx-4"></div>
+        <div class="w-[1px] h-6 bg-gray-100 mx-4" />
         <div class="flex gap-2">
-          <UButton
-            color="gray"
-            @click="editor.commands.toggleHeading({ level: 1 })">
-            <Icon name="material-symbols:format-h1" />
-          </UButton>
-          <UButton
-            color="gray"
-            @click="editor.commands.toggleHeading({ level: 2 })">
-            <Icon name="material-symbols:format-h2" />
-          </UButton>
-          <UButton
-            color="gray"
-            @click="editor.commands.toggleHeading({ level: 3 })">
-            <Icon name="material-symbols:format-h3" />
-          </UButton>
-          <UButton
-            color="gray"
-            @click="editor.commands.setParagraph()">
-            <Icon name="material-symbols:format-paragraph" />
-          </UButton>
+          <div @click="editor.commands.toggleHeading({ level: 1 })">
+            <Icon
+              name="bi:type-h1"
+              class="w-6 h-6"
+            />
+          </div>
+          <div @click="editor.commands.toggleHeading({ level: 2 })">
+            <Icon
+              name="bi:type-h2"
+              class="w-6 h-6"
+            />
+          </div>
+          <div @click="editor.commands.toggleHeading({ level: 3 })">
+            <Icon
+              name="bi:type-h3"
+              class="w-6 h-6"
+            />
+          </div>
         </div>
       </div>
       <editor-content
         :editor="editor"
-        class="pt-4 px-2" />
+        class="pt-4 px-2"
+      />
     </div>
   </section>
 </template>
