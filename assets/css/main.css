@@ -5,3 +5,7 @@ html,
 body {
   font-family: "Noto Sans", sans-serif;
 }
+
+.p-password input {
+  width: 100%;
+}

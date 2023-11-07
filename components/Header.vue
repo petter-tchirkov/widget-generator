@@ -1,6 +1,8 @@
 <template>
-  <header class="p-4 bg-gray-50">
-    <slot name="pageTitle" />
+  <header class="p-4 bg-white rounded-xl shadow-md mb-4">
+    <div class="text-2xl font-bold">
+      <slot name="pageTitle" />
+    </div>
   </header>
 </template>
 

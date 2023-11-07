@@ -40,7 +40,7 @@ import { useEditorStore } from '~/store/editor'
 const edit = useEditorStore()
 
 interface Props {
-  form: 'feedback' | 'review' | undefined
+  form: string | undefined
   buttonColor: string | undefined
   bg: string | undefined
 }

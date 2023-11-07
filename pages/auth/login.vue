@@ -1,16 +1,23 @@
 <template>
-  <section class="max-w-xl w-full border rounded p-4 flex flex-col gap-4">
+  <section
+    class="max-w-xl w-full border p-4 flex flex-col gap-4 bg-white rounded-xl shadow-md"
+  >
     <h1 class="text-3xl text-center font-bold">Login</h1>
     <InputText
       v-model="creds.name"
-      placeholder="Name" />
+      placeholder="Name"
+    />
     <Password
       v-model="creds.password"
-      placeholder="Password" />
+      class="w-full"
+      toggle-mask
+      placeholder="Password"
+    />
     <Button
-      size="lg"
+      size="large"
       label="Login"
-      @click="router.push('/')" />
+      @click="router.push('/')"
+    />
   </section>
 </template>
 

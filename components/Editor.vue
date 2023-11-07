@@ -1,12 +1,9 @@
 <template>
   <section class="max-w-md">
-    <div class="border rounded">
-      <div class="bg-gray-200 rounded-t p-2 flex">
-        <div class="flex gap-2 items-center">
-          <div
-            size="small"
-            @click="editor.commands.toggleBold()"
-          >
+    <div class="border rounded-xl shadow-md">
+      <div class="bg-gray-200 rounded-t-xl p-2 flex">
+        <div class="flex justify-around items-end">
+          <div @click="editor.commands.toggleBold()">
             <Icon
               name="ic:baseline-format-bold"
               class="w-6 h-6"
@@ -31,8 +28,8 @@
             />
           </div>
         </div>
-        <div class="w-[1px] h-6 bg-gray-100 mx-4" />
-        <div class="flex gap-2">
+        <div class="w-[1px] h-6 bg-black mx-4" />
+        <div class="flex justify-around w-full">
           <div @click="editor.commands.toggleHeading({ level: 1 })">
             <Icon
               name="bi:type-h1"
