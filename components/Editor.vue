@@ -1,6 +1,6 @@
 <template>
   <section class="max-w-md">
-    <div class="border rounded-xl shadow-md">
+    <div class="border rounded-xl shadow-md min-h-[200px]">
       <div class="bg-gray-200 rounded-t-xl p-2 flex">
         <div class="flex justify-around items-end">
           <div @click="editor.commands.toggleBold()">
@@ -78,7 +78,7 @@ const editor = useEditor({
 <style>
 .ProseMirror {
   h1 {
-    @apply text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-2xl lg:text-3xl dark:text-white;
+    @apply text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-2xl lg:text-3xl;
   }
 }
 </style>

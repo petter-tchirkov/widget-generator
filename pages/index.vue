@@ -4,7 +4,7 @@
       <template #pageTitle>Редагування</template>
     </Header>
     <div class="editor flex gap-4 w-full h-[calc(100%-80px)]">
-      <div class="bg-white rounded-xl shadow-md p-4">
+      <div class="bg-white rounded-xl shadow-md p-4 overflow-auto">
         <div class="editor__controls flex flex-col gap-4">
           <Editor />
           <div
@@ -38,12 +38,15 @@
           <div class="flex flex-col bg-gray-100 rounded-xl shadow-md">
             <settings-review-settings v-if="selectedForm === 'review'" />
           </div>
+          <Button label="Показати код" />
         </div>
       </div>
       <div
         class="editor__panel bg-blue-300 grow px-4 flex justify-center items-center rounded-xl shadow-md"
       >
+        <CodeShown v-if="codeShown" />
         <EditorResult
+          v-else
           :form="selectedForm"
           :button-color="selectedColor"
           :bg="selectedBg"
@@ -88,6 +91,8 @@ const bgs = [
   }
 ]
 const selectedBg: Ref<string | undefined> = ref()
+
+const codeShown = ref(true)
 </script>
 
 <style scoped></style>
