@@ -17,6 +17,7 @@
               option-label="name"
               option-value="value"
               placeholder="Яку форму додати?"
+              @change="codeShown = false"
             />
             <Dropdown
               v-model="selectedColor"
@@ -25,6 +26,7 @@
               option-label="name"
               option-value="value"
               placeholder="Колір кнопки"
+              @change="codeShown = false"
             />
             <Dropdown
               v-model="selectedBg"
@@ -33,18 +35,28 @@
               option-label="name"
               option-value="value"
               placeholder="Тема"
+              @change="codeShown = false"
             />
           </div>
           <div class="flex flex-col bg-gray-100 rounded-xl shadow-md">
             <settings-review-settings v-if="selectedForm === 'review'" />
           </div>
-          <Button label="Показати код" />
+          <Button
+            :disabled="!selectedForm"
+            :label="codeShown ? 'Показати результат' : 'Показати код'"
+            @click="codeShown = !codeShown"
+          />
         </div>
       </div>
       <div
         class="editor__panel bg-blue-300 grow px-4 flex justify-center items-center rounded-xl shadow-md"
       >
-        <CodeShown v-if="codeShown" />
+        <CodeShown
+          v-if="codeShown"
+          :heading="useEditorStore().heading"
+          :button-color="selectedColor"
+          :form="selectedForm"
+        />
         <EditorResult
           v-else
           :form="selectedForm"
@@ -57,6 +69,7 @@
 </template>
 
 <script setup lang="ts">
+import { useEditorStore } from '~/store/editor'
 interface buttonColor {
   name: string
   value: string
@@ -92,7 +105,7 @@ const bgs = [
 ]
 const selectedBg: Ref<string | undefined> = ref()
 
-const codeShown = ref(true)
+const codeShown = ref(false)
 </script>
 
 <style scoped></style>

@@ -24,13 +24,6 @@
       class="w-full flex justify-center"
       :severity="props.buttonColor === 'green' ? 'success' : 'primary'"
     />
-
-    <footer
-      class="text-xs w-full flex justify-center"
-      :class="bg !== 'dark' ? 'text-neutral-900' : 'text-neutral-100'"
-    >
-      Працює на божій помочі
-    </footer>
   </div>
 </template>
 

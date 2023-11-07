@@ -25,6 +25,7 @@
     "vue-router": "^4.2.5"
   },
   "dependencies": {
+    "@highlightjs/vue-plugin": "^2.1.0",
     "@pinia/nuxt": "^0.4.11",
     "@tiptap/extension-bold": "^2.1.12",
     "@tiptap/extension-code": "^2.1.12",
