@@ -6,6 +6,6 @@
   "singleAttributePerLine": true,
   "bracketSameLine": false,
   "printWidth": 80,
-  "arrowParens": "avoid",
+  "arrowParens": "always",
   "htmlWhitespaceSensitivity": "ignore"
 }

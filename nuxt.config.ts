@@ -17,7 +17,18 @@ export default defineNuxtConfig({
   ],
   primevue: {
     components: {
-      include: ['Button', 'Dropdown', 'Checkbox', 'InputText', 'Password', 'Textarea', 'Rating']
+      include: [
+        'Button',
+        'Dropdown',
+        'Checkbox',
+        'InputText',
+        'Password',
+        'Textarea',
+        'Rating',
+        'Editor',
+        'TabView',
+        'TabPanel'
+      ]
     }
   }
 })

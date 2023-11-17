@@ -1,20 +1,33 @@
 <template>
-  <form>
-    <Textarea
-      v-model="feedback.text"
-      class="mb-4 w-full"
+  <form class="result__form form">
+    <textarea
+      class="form__textarea"
       placeholder="Ваша думка"
+      rows="5"
     />
-    <InputText
-      v-model="feedback.email"
-      class="mb-4 w-full"
+    <input
+      type="email"
+      class="form__email"
       placeholder="Ваш email"
     />
   </form>
 </template>
 
-<script setup lang="ts">
-const feedback = ref({ text: '', email: '' })
-</script>
+<script setup lang="ts"></script>
 
-<style scoped></style>
+<style scoped>
+.form {
+  width: 100%;
+}
+input::placeholder {
+  font-size: 14px;
+}
+.form__textarea,
+.form__email {
+  width: 100%;
+  border-radius: 4px;
+  border: 1px solid rgba(0, 0, 0, 0.47);
+  margin-bottom: 10px;
+  padding: 8px 8px;
+}
+</style>

@@ -6,43 +6,39 @@
     <div class="editor flex gap-4 w-full h-[calc(100%-80px)]">
       <div class="bg-white rounded-xl shadow-md p-4 overflow-auto">
         <div class="editor__controls flex flex-col gap-4">
-          <Editor />
+          <Editor
+            v-model="useEditorStore().editorContent"
+            @text-change="codeShown = false"
+          />
           <div
             class="flex flex-col items-center gap-4 p-4 rounded-xl shadow-md bg-gray-100"
           >
             <Dropdown
-              v-model="selectedForm"
+              v-model="result.selectedForm"
               class="w-full"
-              :options="forms"
+              :options="result.forms"
               option-label="name"
               option-value="value"
               placeholder="Яку форму додати?"
               @change="codeShown = false"
             />
             <Dropdown
-              v-model="selectedColor"
+              v-model="result.selectedButtonColor"
+              v-if="result.selectedForm !== 'cta'"
               class="w-full"
-              :options="buttonColors"
+              :options="result.buttonColors"
               option-label="name"
               option-value="value"
               placeholder="Колір кнопки"
               @change="codeShown = false"
             />
-            <Dropdown
-              v-model="selectedBg"
-              class="w-full"
-              :options="bgs"
-              option-label="name"
-              option-value="value"
-              placeholder="Тема"
-              @change="codeShown = false"
-            />
           </div>
           <div class="flex flex-col bg-gray-100 rounded-xl shadow-md">
-            <settings-review-settings v-if="selectedForm === 'review'" />
+            <settings-review-settings v-if="result.selectedForm === 'review'" />
+            <settings-cta-settings v-if="result.selectedForm === 'cta'" />
           </div>
           <Button
-            :disabled="!selectedForm"
+            :disabled="!result.selectedForm"
             :label="codeShown ? 'Показати результат' : 'Показати код'"
             @click="codeShown = !codeShown"
           />
@@ -53,14 +49,13 @@
       >
         <CodeShown
           v-if="codeShown"
+          class="max-w-lg"
           :heading="useEditorStore().heading"
-          :button-color="selectedColor"
-          :form="selectedForm"
+          :button-color="result.selectedButtonColor"
         />
         <EditorResult
           v-else
-          :form="selectedForm"
-          :button-color="selectedColor"
+          :button-color="result.selectedButtonColor"
           :bg="selectedBg"
         />
       </div>
@@ -70,39 +65,10 @@
 
 <script setup lang="ts">
 import { useEditorStore } from '~/store/editor'
-interface buttonColor {
-  name: string
-  value: string
-}
+import { useResultStore } from '~/store/result'
 
-const forms = [
-  { name: "Форма зворотнього зв'язку", value: 'feedback' },
-  { name: 'Форма оцінка', value: 'review' }
-]
-const selectedForm: Ref<string | undefined> = ref()
+const result = useResultStore()
 
-const buttonColors: buttonColor[] = [
-  {
-    name: 'Синя',
-    value: 'blue'
-  },
-  {
-    name: 'Зелена',
-    value: 'green'
-  }
-]
-const selectedColor: Ref<string | undefined> = ref()
-
-const bgs = [
-  {
-    name: 'Світлий',
-    value: 'light'
-  },
-  {
-    name: 'Темний',
-    value: 'dark'
-  }
-]
 const selectedBg: Ref<string | undefined> = ref()
 
 const codeShown = ref(false)

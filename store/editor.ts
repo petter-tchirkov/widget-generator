@@ -1,17 +1,14 @@
 import { defineStore } from 'pinia'
 
 export const useEditorStore = defineStore('editor', () => {
-  const fullText = ref(
-    `<h1>Заголовок</h1>
-    <p>Оцініть що ви думаєте про наш сервіс</p>`
-  )
+  const editorContent = ref('<h1>Ваш заголовок</h1><p>Ваша думка</p>')
 
   const heading = computed(() => {
-    return fullText.value.split('</h1>')[0].slice(4, 99)
+    return editorContent.value.split('</h1>')[0].slice(4, 99)
   })
 
   const text = computed(() => {
-    return fullText.value
+    return editorContent.value
       .split('</h1>')[1]
       .trim()
       .replace(/<\/?[^>]+(>|$)/g, '')
@@ -25,7 +22,7 @@ export const useEditorStore = defineStore('editor', () => {
   return {
     heading,
     text,
-    fullText,
-    form
+    form,
+    editorContent
   }
 })

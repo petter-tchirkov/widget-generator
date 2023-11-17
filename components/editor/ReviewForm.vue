@@ -1,57 +1,15 @@
 <template>
-  <form>
-    <div
-      v-if="reviewStore.answerType === 'smiles'"
-      class="flex gap-3 justify-around mb-4"
-    >
-      <div
-        v-for="mark in reviewStore.smileAnswers"
-        :key="mark.value"
-      >
-        <Icon
-          :name="mark.icon"
-          class="w-12 h-12"
-        />
-      </div>
-    </div>
-    <div
-      v-else-if="reviewStore.answerType === 'numbers'"
-      class="grid grid-cols-5 gap-2 mb-4"
-    >
-      <div
-        v-for="n in 10"
-        :key="n"
-        class="w-10 h-10 rounded-full border-2 font-bold border-black flex justify-center items-center justify-self-center"
-      >
-        {{ n }}
-      </div>
-    </div>
-
-    <div
-      v-else-if="reviewStore.answerType === 'stars'"
-      class="flex justify-around"
-    >
-      <Rating
-        v-model="reviewStore.starsValue"
-        :cancel="false"
-      >
-        <template #onicon>
-          <Icon
-            name="ph:star-light"
-            class="w-10 h-10"
-          />
-        </template>
-      </Rating>
-    </div>
-
-    <Textarea
-      v-model="review.text"
-      class="w-full mb-4"
-      placeholder="Коментар"
+  <form class="result__form form">
+    <review-smiles v-if="reviewStore.answerType === 'smiles'" />
+    <review-marks v-else-if="reviewStore.answerType === 'marks'" />
+    <textarea
+      class="form__textarea"
+      placeholder="Ваша думка"
+      rows="5"
     />
-    <InputText
-      v-model="review.email"
-      class="w-full mb-4"
+    <input
+      type="email"
+      class="form__email"
       placeholder="Ваш email"
     />
   </form>
@@ -61,7 +19,21 @@
 import { useReviewStore } from '~/store/review'
 
 const reviewStore = useReviewStore()
-const review = ref({ text: '', email: '' })
 </script>
 
-<style scoped></style>
+<style scoped>
+.form {
+  width: 100%;
+}
+input::placeholder {
+  font-size: 14px;
+}
+.form__textarea,
+.form__email {
+  width: 100%;
+  border-radius: 4px;
+  border: 1px solid rgba(0, 0, 0, 0.47);
+  margin-bottom: 10px;
+  padding: 8px 8px;
+}
+</style>
