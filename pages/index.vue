@@ -23,15 +23,26 @@
               @change="codeShown = false"
             />
             <Dropdown
-              v-model="result.selectedButtonColor"
               v-if="result.selectedForm !== 'cta'"
+              v-model="result.selectedButtonColor"
               class="w-full"
               :options="result.buttonColors"
               option-label="name"
               option-value="value"
               placeholder="Колір кнопки"
               @change="codeShown = false"
-            />
+            >
+              <template #option="{ option }">
+                <div class="flex">
+                  <div
+                    class="w-full h-6 rounded flex justify-center items-center py-2"
+                    :style="{ background: option.color }"
+                  >
+                    <span class="text-white">{{ option.name }}</span>
+                  </div>
+                </div>
+              </template>
+            </Dropdown>
           </div>
           <div class="flex flex-col bg-gray-100 rounded-xl shadow-md">
             <settings-review-settings v-if="result.selectedForm === 'review'" />

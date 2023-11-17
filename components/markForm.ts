@@ -1,23 +1,23 @@
 export const markForm = `
   <div class="container">
     <label class="mark">
-      <input type="radio" name="mark" />
+      <input type="radio" name="mark" value="1"/>
       <span class="checkmark">1</span>
     </label>
     <label class="mark">
-      <input type="radio" name="mark" />
+      <input type="radio" name="mark" value="2"/>
       <span class="checkmark">2</span>
     </label>
     <label class="mark">
-      <input type="radio" name="mark" />
+      <input type="radio" name="mark" value="3"/>
       <span class="checkmark">3</span>
     </label>
     <label class="mark">
-      <input type="radio" name="mark" />
+      <input type="radio" name="mark" value="4"/>
       <span class="checkmark">4</span>
     </label>
     <label class="mark">
-      <input type="radio" name="mark" />
+      <input type="radio" name="mark" value="5"/>
       <span class="checkmark">5</span>
     </label>
   </div>

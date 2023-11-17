@@ -126,17 +126,19 @@ const cta = `
 `
 
 const reviewForm = `
-  <form class="result__form form">
+  <form class="result__form form" action="10.0.98.105/api/survey" method="post">
     ${getAnswerType.value}
     <textarea
       class="form__textarea"
       placeholder="Ваша думка"
       rows="5"
+      name="text"
     />
     <input
       type="email"
       class="form__email"
       placeholder="Ваш email"
+      name="email"
     />
   </form>
 `
@@ -147,7 +149,7 @@ const button = computed(() => {
       return cta
     default:
       return `
-  <button class="result__btn ${result.selectedButtonColor}">
+  <button type="submit" class="result__btn ${result.selectedButtonColor}">
     ${result.selectedButtonLabel}
   </button>
       `

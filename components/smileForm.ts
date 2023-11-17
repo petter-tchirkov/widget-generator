@@ -1,7 +1,7 @@
 export const smileForm = `
     <div class="container">
       <label class="smile angry">
-        <input type="radio" name="smile" />
+        <input type="radio" name="smile" value="1"/>
         <span class="checkmark">
           <svg viewBox="0 0 24 24" width="24" height="24" fill="none" xmlns="http://www.w3.org/2000/svg">
             <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
@@ -20,7 +20,7 @@ export const smileForm = `
         </span>
       </label>
       <label class="smile sad">
-        <input type="radio" name="smile" />
+        <input type="radio" name="smile" value="2"/>
         <span class="checkmark">
           <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
             <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
@@ -41,7 +41,7 @@ export const smileForm = `
         </span>
       </label>
       <label class="smile neutral">
-        <input type="radio" name="smile" />
+        <input type="radio" name="smile" value="3"/>
         <span class="checkmark">
           <svg viewBox="0 0 24 24" width="24" height="24" fill="none" xmlns="http://www.w3.org/2000/svg">
             <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
@@ -59,7 +59,7 @@ export const smileForm = `
         </span>
       </label>
       <label class="smile happy">
-        <input type="radio" name="smile" />
+        <input type="radio" name="smile" value="4"/>
         <span class="checkmark">
           <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
             <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
@@ -76,7 +76,7 @@ export const smileForm = `
         </span>
       </label>
       <label class="smile love">
-        <input type="radio" name="smile" />
+        <input type="radio" name="smile" value="5"/>
         <span class="checkmark">
           <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
             <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
